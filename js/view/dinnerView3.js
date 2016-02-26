@@ -9,7 +9,7 @@ var DinnerView3 = function (container,model) {
 	}
 	
 	
-	this.getDishes = function(type, filter) {
+	this.getDishes = function(type, filter) {	
 		var allDishes = model.getAllDishes(type, filter);
 
 		for (var i = 0; i < allDishes.length; i++) {
@@ -22,7 +22,8 @@ var DinnerView3 = function (container,model) {
 		this.getDishes(type, filter);
 	} 
 
-	this.getDishes($("#typeSelect").val());
+	this.getDishes();
+	
 	
 
 }
