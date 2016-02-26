@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Dinner planner</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="stylesheet.css">
+
+  </head>
+  <body>
+    <div class="page-title">
+      <h1>HOMELETTE<small> From the best chefs in the world directly into your kitchen.</small></h1>
+    </div> 
+     
+    <div class="row">
+        <div class="container">
+            <!-- DINNER VIEW 1 -->
+            <div id="welcomeScreen">
+              <div id="background-img"></div>
+              <h2>A home dinner service!</h2>
+              <span id="createNewDinnerButton" class="yellowButton"></span>
+            </div>
+
+            <!-- DINNER VIEW 5 -->
+            <div id="dinnerView5">
+              <div id="myDinnerList-5" class="myDinnerList">
+                <div id="numberOfGuests-5" class="col-md-8 numberOfGuests"></div>
+                <div id="backButtonDiv-5" class="col-md-4" class="yellowButton"></div>
+              </div>
+
+              <div class="allCostDishes">
+                <div id="costSummary"></div>
+                <div id="totalCost"></div>
+                <div class="button col-md-12">
+                  <button type="button" id="printButton" class="yellowButton">Print Full Recipe</button>
+                </div>
+              </div>
+            </div>
+        
+            <!-- DINNER VIEW 6 -->
+            <div id="dinnerView6">
+              <div class="myDinnerList" id="myDinnerList-6">
+                <div id="numberOfGuests-6" class="col-md-8 numberOfGuests"></div>
+                <div id="backButton-6" "col-md-4" class="yellowButton"></div>
+              </div>
+
+              <div id="dishSummary"></div>
+            </div>
+
+            <!-- DINNER VIEW 2 -->
+            <div id="left-column" class="col-md-2">
+                <div class="left-content col-md-10">
+                    <h4>My Dinner</h4>
+                    <div class="col-md-12">
+                        <div class="col-md-4">People</div>
+                          <input class="col-md-6" id="numberOfGuestsInput" type="number" min="1">
+                          </input>
+                    </div>
+
+                    <table id="dishTable" width="70%">
+                    </table>
+
+                    <span id="totalPrice"></span>
+
+                    <button id="confirmDinnerButton" type="button" class="yellowButton">Confirm Dinner</button>
+                </div>
+            </div>
+
+            <div id="right-column" class="col-md-8">
+                <!-- DINNER VIEW 3 -->
+                <div id="dinnerView3">
+                  <div id="search-bar" class="col-md-4">
+                    <h4>Select Dish</h4>
+                    <div class="line-separator"></div>
+                    <div class="input-group">
+                      <input id="searchInput" type="text" class="form-control" placeholder="Search for dish">
+                        <span class="input-group-btn">
+                          <button id="searchButton" class="btn btn-default" type="button">Search</button>
+                        </span>
+                      </div>
+                  </div>
+
+                  <div class="form-group col-md-4">
+                    <h4>Select type:</h4>
+                    <select class="form-control" id="typeSelect">
+                        <option value="starter">Starter</option>
+                        <option value="main dish">Main</option>
+                        <option value="dessert">Dessert</option>
+                    </select>
+                  </div>
+                  
+                  <div class="right-content-3 col-md-10"></div>
+                </div>
+
+                <!-- DINNER VIEW 4 -->
+                <div id="dinnerView4">
+                    <div id="right-content-4 col-md-10">
+                        <div id="theDish" class="col-md-4"></div>
+                        <button type="button" id="backButton" class="yellowButton">back to Select Dish</button>
+                            <div id="ingredientList" class="col-md-4">
+                                <span id="totalNumberOfGuests"></span>
+                                <div id="ingredients"></div>
+                                <span id="totalDishPrice"></span>
+                                <button type="button" id="confirmButton">Confirm dish</button>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <!-- Bootstrap JavaScript, needed if you want for instance tabs, models, popovers etc. -->
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+
+  <!-- The application JavaScript code -->
+  <script src="js/app.js"></script>
+
+  <!-- The model JavaScript code -->
+  <script src="js/model/dinnerModel.js"></script>
+
+  <!-- The views JavaScript code -->
+  <script src="js/view/dinnerView1.js"></script>
+  <script src="js/view/dinnerView2.js"></script>
+  <script src="js/view/dinnerView3.js"></script>
+  <script src="js/view/dinnerView4.js"></script>
+  <script src="js/view/dinnerView5.js"></script>
+  <script src="js/view/dinnerView6.js"></script>
+
+  <!-- The application JavaScript code -->
+  <script src="js/controller/dinnerController1.js"></script>
+  <script src="js/controller/dinnerController2.js"></script>
+  <script src="js/controller/dinnerController3.js"></script>
+  <script src="js/controller/dinnerController4.js"></script>
+  <script src="js/controller/dinnerController5.js"></script>
+  <script src="js/controller/dinnerController6.js"></script>
+  </body>
+</html>

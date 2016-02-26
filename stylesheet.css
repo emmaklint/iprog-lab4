@@ -1,0 +1,154 @@
+@import url(https://fonts.googleapis.com/css?family=Titillium+Web);
+
+html, body{
+  height:100%;  
+  width: 100%;
+  margin:0px;
+  overflow-x:hidden; 
+/*  background-image: url("http://www.nutri-magnets.com/5-foodprep-1.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%; */
+}
+
+#background-img {
+    height:100%;  
+    width: 100%;
+    margin:0px;
+    overflow-x:hidden; 
+    background-image: url("http://www.nutri-magnets.com/5-foodprep-1.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%; 
+}
+
+p {
+    font-family: Titillium Web;
+    font-size: 150%;
+}
+
+img {
+  border-style: solid;
+  border-width: 2px;
+}
+
+.container{
+  height:100%;
+  width:100%;
+  margin:0px;
+  padding:0px;
+  color: black;
+}
+
+.row{
+  height: 100%; 
+}
+
+#left-column{
+  background-color:white;
+  border-left: 2px solid;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+  height: 100%;
+  width: 25%;
+}
+
+.page-title{
+  padding: 50px  9999px;
+  background: #FED766;
+  margin: 0 -9999px;
+  border-bottom: 2px solid;
+  opacity: 0.4;
+}
+
+.page-title>h1{
+  color: black;
+  font-family: Titillium Web;
+  font-size: 70px;
+}
+
+.page-title>h1>small{
+  color: black;
+  font-size: 25px;
+  font-style: italic;
+  font-family: Titillium Web;
+}
+
+.menu-table{
+  margin-top:100px;
+}
+
+.menu-table th{
+  color: black;
+  background-color: white;
+  border-color: black;
+}
+
+.number-of-guests{
+  padding:0px;
+}
+
+h2 {
+  font-family: Titillium Web;
+}
+
+#ingredientList {
+  background: #FED766;
+  border-style: solid;
+  border-width: 5px;
+  padding: 20px;
+}
+
+.myDinnerList {
+   background: #FED766;
+   height: 50px;
+   font-size: 30px;
+   line-height: 50px;
+   font-family: Titillium Web;
+   vertical-align: center;
+   padding-left: 20px;
+}
+
+#totalCost {
+  text-align: right;
+  font-size: 200%;
+  margin-left: 100px;
+}
+
+/*#costSummary {
+  margin-top: 100px;
+}*/
+
+.allCostDishes {
+  padding:40px;
+  vertical-align:bottom; 
+}
+
+.cost {
+  color: red;
+}
+
+#dish {
+  vertical-align:center; 
+}
+
+.dishImage {
+  margin-top: 10px;  
+}
+
+.info{
+  color: white;
+  }
+
+#welcomeScreen {
+  margin: auto;
+  width: 60%;
+  padding: 10px;
+}
+
+.yellowButton {
+  background-color: #FED766;
+  font-size: 16pt;
+  font-family: Titillium Web;
+  box-shadow: 3px 3px 2px black;
+  border: 2px solid black;
+}
+*/*/*/
