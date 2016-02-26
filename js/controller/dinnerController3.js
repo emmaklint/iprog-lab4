@@ -1,14 +1,26 @@
 var DinnerController3 = function(view, model) {
 
 	$("#searchButton").click(function() {
-		view.updateSearch($("#typeSelect").val(), $("#searchInput").val());
+		if ($("#typeSelect").val() === 'all dishes') {
+			view.updateSearch(undefined, $("#searchInput").val());
+			console.log('first')
+		} else {
+			view.updateSearch($("#typeSelect").val(), $("#searchInput").val());
+			console.log('second')
+		}
+	
 		makeDishClickable();
 		$("#searchInput").val('');
 
 	})
 
 	$("#typeSelect").change(function() {
-		view.updateSearch($(this).val(), $("#searchInput").val());
+		
+		if ($(this).val() === 'all dishes') {
+			view.updateSearch(undefined, $("#searchInput").val());
+		} else {
+			view.updateSearch($(this).val(), $("#searchInput").val());
+		}
 		makeDishClickable();
 	})
 
