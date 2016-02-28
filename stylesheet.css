@@ -1,21 +1,17 @@
 @import url(https://fonts.googleapis.com/css?family=Titillium+Web);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
 
 html, body{
   height:100%;  
   width: 100%;
-  margin:0px;
-  overflow-x:hidden; 
-/*  background-image: url("http://www.nutri-magnets.com/5-foodprep-1.jpg");
-  background-repeat: no-repeat;
-  background-size: 100%; */
 }
 
 #background-img {
     height:100%;  
     width: 100%;
-    margin:0px;
+    margin-top: 0px;
     overflow-x:hidden; 
-    background-image: url("http://www.nutri-magnets.com/5-foodprep-1.jpg");
+    background-image: url("http://farm7.static.flickr.com/6220/6347794781_358925ca7f_o.jpg");
     background-repeat: no-repeat;
     background-size: 100%; 
 }
@@ -23,6 +19,9 @@ html, body{
 p {
     font-family: Titillium Web;
     font-size: 100%;
+    text-align: center;
+    margin-bottom: 50px;
+
 }
 
 img {
@@ -64,24 +63,58 @@ img {
 
 .page-title{
   padding: 50px  9999px;
-  background: #FED766;
+  background: black;
   margin: 0 -9999px;
+  margin-bottom: 10px; 
   border-bottom: 2px solid;
-  opacity: 0.4;
+  opacity: 0.9;
+  font-family: Open Sans Condensed;
 }
 
 .page-title>h1{
-  color: black;
-  font-family: Titillium Web;
+  color: white;
   font-size: 70px;
+  margin-left: 15px;
 }
 
 .page-title>h1>small{
-  color: black;
+  color: white;
+  margin-left: 25px;
   font-size: 25px;
   font-style: italic;
-  font-family: Titillium Web;
 }
+
+#welcomeScreen{
+  height: 100%;
+  width: 100%;
+}
+
+#welcomeBox{
+  width: 400px;
+  height: 350px;
+  background-color: black;
+  opacity: 0.8;
+  color:white;
+  margin-left: 50px;
+}
+
+#welcomeBox>h2{
+    font-size: 25px;
+  text-align: center;
+  padding-top: 40px;
+}
+
+
+ .line-separator{
+    height: 1px;
+    width:300px;
+    margin-bottom: 20px;
+    margin-left: 50px;  
+    overflow: hidden;
+    background-color: white;
+}
+
+
 
 .menu-table{
   margin-top:100px;
@@ -149,17 +182,15 @@ h2 {
   color: white;
   }
 
-#welcomeScreen {
-  margin: auto;
-  width: 60%;
-  padding: 10px;
-}
 
 .yellowButton {
-  background-color: #FED766;
+  background-color: grey;
+  color: white; 
   font-size: 16pt;
   font-family: Titillium Web;
   box-shadow: 3px 3px 2px black;
   border: 2px solid black;
-}
-*/*/*/
+  width: 200px;
+  height: 100px;
+  margin-left: 50px;
+
