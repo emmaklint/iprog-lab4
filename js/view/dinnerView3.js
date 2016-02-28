@@ -10,7 +10,7 @@ var DinnerView3 = function (container,model) {
 	
 	
 	this.getDishes = function(titleKeyword) {	
-		var allDishes = model.getAllDishes('turkey');
+		var allDishes = model.getAllDishes('all');
 
 		for (var i = 0; i < allDishes.length; i++) {
 			dishInfo(allDishes[i]);
