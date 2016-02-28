@@ -146,6 +146,7 @@ var DinnerModel = function() {
         	url:url,
         	success: function(data){
         		console.log(data);
+        		model.notifyObserver(data);
         	},
         	error: function(){
         		console.log('Error in getAllDishes function');
@@ -166,6 +167,8 @@ var DinnerModel = function() {
          	url: url,
          	success: function (data) {
             	console.log(data);
+				//model.addToPending(data);
+				model.notifyObservers(data);
             },
 
             error:function(){
