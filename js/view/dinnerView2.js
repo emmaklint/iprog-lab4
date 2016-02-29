@@ -2,7 +2,7 @@ var DinnerView2 = function (container,model) {
 
 	var costInfo = function(dish, model) {
 		var cost = model.getDishPrice(dish.id);
-		var dishName = ('<td width="30%">' + dish.title + '</td>')
+		var dishName = ('<td width="30%">' + dish.name + '</td>')
 		var dishCost = ('<td width="30%">' + cost + ' kr</td>')
 
 		$("#dishTable").append('<tr id="dish-nr-' + dish.id + '">' + dishName + dishCost + '</tr>')
