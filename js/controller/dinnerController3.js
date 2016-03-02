@@ -3,10 +3,9 @@ var DinnerController3 = function(view, model) {
 	$("#searchButton").click(function() {
 		if ($("#typeSelect").val() === 'all dishes') {
 			view.updateSearch(undefined, $("#searchInput").val());
-			console.log('first')
 		} else {
 			view.updateSearch($("#typeSelect").val(), $("#searchInput").val());
-			console.log('second')
+	
 		}
 	
 		makeDishClickable();
@@ -31,7 +30,6 @@ var DinnerController3 = function(view, model) {
 		model.addToPending(id);
 		$("#dinnerView3").hide();
 		$("#dinnerView4").show()
-		DinnerView4($("#dinnerView4"), model, id);
 		})
 
 	}

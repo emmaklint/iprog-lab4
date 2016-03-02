@@ -24,7 +24,6 @@ var DinnerView3 = function (container,model) {
 
 	this.getDishes();
 	
-	
 
 }
 

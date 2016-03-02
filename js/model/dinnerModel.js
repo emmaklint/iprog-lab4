@@ -35,20 +35,18 @@ var DinnerModel = function() {
 
 	//Tanken är att om vi klickar på en dish, läggs den i pending tills vi klickas confirm dish (skickas då vidare till den sidan vid onklick) 
 	this.addToPending = function(id) {
-		pending.push(this.getDish(id))
+		this.pendingDish = this.getDish(id);
+		pending.push(this.pendingDish)
 		this.notifyObserver();
 	}	
 
 	this.removeFromPending = function(){
-		while(pending.length > 0) {
-    		pending.pop(); //Removes the last element of an array, and returns that element
-    		this.notifyObserver();
-			}
-		}
+		pending.pop(); //Removes the last element of an array, and returns that element
+    	this.notifyObserver();
+    }
 
-
-	this.pendingDish = function(){
-		return pending;
+	this.getPendingDish = function() {
+		return pending[0];
 	}
 
 

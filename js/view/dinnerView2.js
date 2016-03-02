@@ -12,7 +12,7 @@ var DinnerView2 = function (container,model) {
 		this.guestInput = $("#numberOfGuestsInput");
 		this.guestInput.val(model.getNumberOfGuests());
 
-		this.pending = model.pendingDish();
+		this.pending = model.getPendingDish();
 		pendingString = '';
 		pendingPrice = 0;
 		minusPrice = 0;
@@ -25,19 +25,19 @@ var DinnerView2 = function (container,model) {
 			costInfo(menu[i],model);
 		}
 
-		if (this.pending.length !== 0){
+		if (this.pending !== undefined){
 			for (var i = 0; i < menu.length; i++) {
-				if(this.pending[0].type == menu[i].type){
+				if(this.pending.type == menu[i].type){
 					$("#dish-nr-" + menu[i].id).hide()
 					var removeDishPrice = true;
 					minusPrice = model.getDishPrice(menu[i].id);
 				} 
 			}
 
-			pendingPrice = model.getDishPrice(this.pending[0].id);
+			pendingPrice = model.getDishPrice(this.pending.id);
 			pendingString += '<tr><td width="30%">Pending</td><td width="30%">' + pendingPrice + ' kr</td>'
 			$("#dishTable").append(pendingString);
-		}
+		} 
 		
 		totMenuPrice = model.getTotalMenuPrice();
 		pendingAndTotalPrice = pendingPrice + totMenuPrice - minusPrice;

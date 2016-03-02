@@ -10,6 +10,7 @@ $(function() {
 	var dinnerView1 = new DinnerView1($("#welcomeScreen"),model);
 	var dinnerView2 = new DinnerView2($("#left-column"),model);
 	var dinnerView3 = new DinnerView3($("#dinnerView3"),model);
+	var dinnerView4 = new DinnerView4($("#dinnerView4"),model);
 	var dinnerView5 = new DinnerView5($("#dinnerView5"), model);
 	var dinnerView6 = new DinnerView6($("#dinnerView6"), model);
 
