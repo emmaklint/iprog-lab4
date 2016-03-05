@@ -1,59 +1,56 @@
 //ExampleView Object constructor
-var DinnerView4 = function (container, model, id) {
+var DinnerView4 = function (container, model) {
+
+
+this.listIngredient=container.find("#ingredients");
+this.totalGuests=container.find("#totalNumberOfGuests");
+this.totalPrice=container.find("#totalDishPrice")
+this.dishInfo=container.find("#theDish");
+this.totalPrice=container.find("#totalDishPrice");
+
+ this.update=function(message){
+ 	console.log(message);
+ 
+ 	if (message ==='penging changed'){
+ 	this.guests = model.getNumberOfGuests();
+ 	this.pending=model.pendingDish();
+ 	this.totalGuests.empty();
+ 	this.totalPrice.empty();
+
+
+ 	this.price=model.getPendingPrice();
 	
+	
+	this.totalGuests.append('<h2>Ingredients for ' + this.guests + ' people</h2>');
 
-	this.ingredientInfo = function(ingredient, model) {
-		var ingredientString = '';
-		
-		// Get the ingredients cost and amount from methods in model
-		var cost = ingredient.price * this.guests;
-		var amount = ingredient.quantity * this.guests;
+	this.dishInfo.append('<div id="image" class="col-md-8"><img src="' + (this.pending[0].ImageURL) + '"/></div>'+
+						'<div class="dishText col-md-8" id="' + this.pending[0].RecipeID+ '"">' +
+						'<h3>'+this.pending[0].Title + '</h3>' +'<p>'+this.pending[0].Instructions + '</p>'+ '</div>');
 
-		//Creates a table which contains the ingredients name, amount, unit and cost.
-	    var ingrAmount = ('<td width="30%">' + amount + ' ' + ingredient.unit + '</td>')
-	    var ingrName = ('<td width="60%">' + ingredient.name + '</td>');
-	    var ingrCost = ('<td width="5%">' + cost + 'kr' + '</td>');
 
-	    ingredientString += '<tr>' + ingrAmount + ingrName + ingrCost + '</tr>';
-	    return ingredientString;
-	}
 
-	this.dishInfo = function(dish, model) {
-		allIngredients = '';
-
-		// Creates a div which contains the objects name and description
-		var dishImg = ('<div id="image" class="col-md-8"><img src="images/' + (dish.image) + '"/></div>');
-		var dishText = ('<h2>' + dish.name + '</h2><p>' + dish.description + '</p>');
-		$("#theDish").html(dishImg + '<div class="dishText col-md-8" id="' + dish.id + '"">' + dishText + '</div>')
-
-		// Looks through every ingredient in an object
-		// and sends it to the ingredientList-method
-		for (var i in dish.ingredients) {
-			allIngredients += this.ingredientInfo(dish.ingredients[i]);
-		}
-	}
-
-	this.update = function() {
-		this.pendingDish = model.getPendingDish();
-		this.guests = model.getNumberOfGuests();
-
-		if (this.pendingDish !== undefined) {
-			this.dishInfo(this.pendingDish, model);
-			
-
-			// Sends number of guests and dishprice to HTML
-			$("#totalNumberOfGuests").html('<h2>Ingredients for ' + this.guests + ' people</h2>');
-			$("#totalDishPrice").html('<h2>Total: ' + model.getDishPrice(this.pendingDish.id) + ' kr</h2>');
-			$("#ingredients").html(allIngredients)		
-		}
-	}
-
-	this.update();
-	model.addObserver(this);
-
+	this.listIngredient.empty();
+	this.displayInfo(this.pending[0]);
+	this.totalPrice.html('<td>'+'SEK '+Math.round(this.price)+'</td>');
 }
 
+this.displayInfo=function(object){
+	this.pending=object;
+		for(x in this.pending.Ingredients){
+		this.listIngredient.append("<tr>")
+		this.listIngredient.append("<td>"+Math.round(this.pending.Ingredients[x].Quantity*this.guests)+"</td>");
 
+		this.listIngredient.append("<td>"+" "+ this.pending.Ingredients[x].Unit+" "+"</td>");
+	
+		this.listIngredient.append("<td>"+this.pending.Ingredients[x].Name+"</td>");
+		this.listIngredient.append("<td>"+" "+Math.round(this.pending.Ingredients[x].Quantity)+ " SEK"+ "</td>");
+		this.listIngredient.append("</tr>");
+		}
+}
+}
+	model.addObserver(this);  
+
+}
  
 
 

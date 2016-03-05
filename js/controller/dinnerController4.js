@@ -9,9 +9,8 @@ $("#backButton").click(function() {
 
 $("#confirmButton").click(function() {
 	// Add dish to menu
-	var id = $(".dishText").attr('id');
+	model.addDishToMenu();
 	model.removeFromPending();
-	model.addDishToMenu(id);
 	$("#dinnerView3").show();
 	$("#dinnerView4").hide()
 })

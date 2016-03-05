@@ -68,9 +68,28 @@
                     </div>
 
                     <table id="dishTable" width="70%">
+                    <thead>
+                    <tr>
+                      <th>Dishname</th>
+                      <th>Cost</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                        <td id="pendingName"></td>
+                        <td id="pendingPrice"></td>
+                        </tr>
+
+                      <tr>
+                        <td>Total: </td>
+                        <td id="totalPrice"></td> 
+                        </tr>
+                      </tbody>
+
+
                     </table>
 
-                    <span id="totalPrice"></span>
+                   
 
                     <button id="confirmDinnerButton" type="button" class="yellowButton">Confirm Dinner</button>
                 </div>
@@ -101,7 +120,8 @@
                     </select>
                   </div>
                   
-                  <div class="right-content-3 col-md-12"></div>
+                  <div id="dishesClick" class="right-content-3 col-md-12"></div>
+
                 </div>
 
                 <!-- DINNER VIEW 4 -->

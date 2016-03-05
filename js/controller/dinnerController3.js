@@ -2,13 +2,14 @@ var DinnerController3 = function(view, model) {
 
 	$("#searchButton").click(function() {
 		if ($("#typeSelect").val() === 'all dishes') {
-			view.updateSearch(undefined, $("#searchInput").val());
+			view.update(undefined, $("#searchInput").val());
+			console.log('first')
 		} else {
-			view.updateSearch($("#typeSelect").val(), $("#searchInput").val());
-	
+			view.update($("#typeSelect").val(), $("#searchInput").val());
+			console.log('second')
 		}
 	
-		makeDishClickable();
+		//makeDishClickable();
 		$("#searchInput").val('');
 
 	})
@@ -16,23 +17,32 @@ var DinnerController3 = function(view, model) {
 	$("#typeSelect").change(function() {
 		
 		if ($(this).val() === 'all dishes') {
-			view.updateSearch(undefined, $("#searchInput").val());
-		} else {
-			view.updateSearch($(this).val(), $("#searchInput").val());
+			model.getAllDishes('all');
+		} 
+
+		if($(this).val() === 'starter'){
+			model.getAllDishes('Appetizers');
 		}
-		makeDishClickable();
+		if($(this).val() === 'main dish'){
+			model.getAllDishes('Main Dish');
+		}
+
+		if($(this).val()==='dessert'){
+			model.getAllDishes('Desserts');
+		}
+
 	})
 
-	var makeDishClickable = function() {
-		
-		$(".clickDish").click(function(){
-		var id = $(this).attr('id');
-		model.addToPending(id);
+this.update=function(){
+		$("#dishesClick").bind('click', function(event){
+		console.log("klick");
+		console.log($(event.target).parent().attr('id'));
+		var id = $(event.target).parent().attr('id');
+		model.getDish(id);
 		$("#dinnerView3").hide();
 		$("#dinnerView4").show()
-		})
+		});	
+}
 
-	}
-
-	makeDishClickable();
+model.addObserver(this);
 };
